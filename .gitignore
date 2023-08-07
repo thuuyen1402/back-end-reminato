@@ -1,7 +1,6 @@
 node_modules
 # Keep environment variables out of version control
 #.env PUST ENV FILE FOR TESTING PURPOSE
-.env
 package-lock.json
 yarn.lock
 logs/**
