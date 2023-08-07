@@ -50,7 +50,7 @@ const NOTIFICATION_SOCKET_PORT = process.env.NOTIFICATION_SOCKET_PORT ?? 3555;
   }
 
   io.on("connection", (socket) => {
-    if (!socket.data.isAuth) socket.disconnect();
+    // if (!socket.data.isAuth) socket.disconnect();
     runConsume(io)
   });
 
