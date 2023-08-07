@@ -25,6 +25,7 @@ const NOTIFICATION_SOCKET_PORT = process.env.NOTIFICATION_SOCKET_PORT ?? 3555;
   const io = new Server(server, {
     cors: {
       origin: process.env.WEB_APP_URL ?? true,
+      credentials: false
     },
     allowEIO3: true
   });
