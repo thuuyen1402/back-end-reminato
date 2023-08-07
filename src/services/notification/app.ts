@@ -35,7 +35,7 @@ const NOTIFICATION_SOCKET_PORT = process.env.NOTIFICATION_SOCKET_PORT ?? 3555;
   // io.use((socket, next) => {
   //   return authSocket(socket, next);
   // });
-
+  Logger.warn("Remove auth");
 
   const runConsume = async (io) => {
     try {
