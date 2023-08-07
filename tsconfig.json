@@ -1,0 +1,50 @@
+{
+  "include": [
+    "./src/**/*.ts",
+    "./custom.d.ts",
+    "./env.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "ts-node": {
+    "esm": true,
+    "files": true
+  },
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "ESNext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "moduleResolution": "Node",
+    "baseUrl": ".",
+    "paths": {
+      "@constants/*": [
+        "./src/app/constants/*"
+      ],
+      "@utils/*": [
+        "./src/app/utils/*"
+      ],
+      "@services/*": [
+        "./src/app/services/*"
+      ],
+      "@app/*": [
+        "./src/app/*"
+      ]
+    },
+    "allowSyntheticDefaultImports": true,
+    "outDir": "build",
+    "typeRoots": [
+      "./node_modules/@types",
+      "custom.d.ts",
+      "./src/types/**/*.d.ts",
+      "env.d.ts"
+    ],
+    "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+    "skipLibCheck": true,
+    "noEmit": true
+  },
+}

@@ -1,0 +1,3 @@
+type NotificationServiceShardingConsumerData = {
+  videoShareId: string;
+};

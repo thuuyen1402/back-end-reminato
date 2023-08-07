@@ -1,0 +1,33 @@
+generator client {
+    provider      = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id                  String       @id @default(cuid())
+    email               String       @unique
+    password            String
+    refreshToken        String?
+    videoShareUpvotes   VideoShare[] @relation("upvote_user")
+    videoShareDownvotes VideoShare[] @relation("updown_user")
+    videoShare          VideoShare[]
+}
+
+model VideoShare {
+    id            String   @id @default(cuid())
+    title         String
+    description   String
+    videoId       String
+    thumbnailUrls String //Sql lite not support scale list or Json
+    upvote        Int      @default(0)
+    upvoteUsers   User[]   @relation("upvote_user")
+    downvote      Int      @default(0)
+    downvoteUsers User[]   @relation("updown_user")
+    sharedTime    DateTime @default(now())
+    sharedBy      User     @relation(fields: [sharedById], references: [id])
+    sharedById    String
+}
