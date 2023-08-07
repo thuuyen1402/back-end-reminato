@@ -32,9 +32,9 @@ const NOTIFICATION_SOCKET_PORT = process.env.NOTIFICATION_SOCKET_PORT ?? 3555;
 
   //Wrap auth session
 
-  io.use((socket, next) => {
-    return authSocket(socket, next);
-  });
+  // io.use((socket, next) => {
+  //   return authSocket(socket, next);
+  // });
 
 
   const runConsume = async (io) => {
